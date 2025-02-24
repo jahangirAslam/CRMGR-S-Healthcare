@@ -76,116 +76,17 @@
             <div class="container">
               <ol>
                 <li><a href="index.html">Home</a></li>
-                <li class="current">Services</li>
+                <li class="current">Service Details</li>
               </ol>
             </div>
           </nav>
-            <div class="heading">
-                <div class="container">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-8">
-                    <h1>Services </h1>
-                    <p class="mb-0">
-
-                      We provide a comprehensive range of healthcare services designed to support every aspect of your health journey:
-
-                    </p>
-                    </div>
-                </div>
-                </div>
-            </div>
-     
     </div><!-- End Page Title -->
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <div class="container">
-        <div class="row gy-4">
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card service-card" data-id="1" onclick="redirectToDetails(1)">
-              <img src="assets/img/services/healthcare.jpg" class="card-img-top" alt="General Healthcare">
-              <div class="card-body">
-                <h5 class="card-title">General Healthcare</h5>
-                <p class="card-text">
-                  Our general healthcare services include routine check-ups, expert consultations, and disease management.  
-                  We prioritize your overall well-being through preventive care, early diagnosis, and effective treatment plans.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card service-card" data-id="2" onclick="redirectToDetails(2)">
-              <img src="assets/img/services/counselling.jpg" class="card-img-top" alt="Nutritional Counseling">
-              <div class="card-body">
-                <h5 class="card-title">Nutritional Counseling</h5>
-                <p class="card-text">
-                  Get expert guidance on personalized nutrition plans tailored to your lifestyle and health goals.  
-                  Our specialists provide advice on balanced meals, weight management, and nutrient intake for optimal well-being.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card service-card" data-id="3" onclick="redirectToDetails(3)">
-              <img src="assets/img/services/suppliments.jpg" class="card-img-top" alt="Vitamins & Supplements">
-              <div class="card-body">
-                <h5 class="card-title">Vitamins & Supplements</h5>
-                <p class="card-text">
-                  We offer high-quality vitamins and supplements to boost your immune system, enhance energy levels, and support overall health.  
-                  Our range includes organic and scientifically backed products for different health needs.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card service-card" data-id="4" onclick="redirectToDetails(4)">
-              <img src="assets/img/services/diet.jpg" class="card-img-top" alt="Weight Management">
-              <div class="card-body">
-                <h5 class="card-title">Weight Management & Diet Plans</h5>
-                <p class="card-text">
-                  Our customized diet plans help you achieve your ideal weight safely and effectively.  
-                  Whether you’re aiming for weight loss, muscle gain, or maintaining a healthy lifestyle, we provide expert-driven solutions.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card service-card" data-id="5" onclick="redirectToDetails(5)">
-              <img src="assets/img/services/wellness.jpg" class="card-img-top" alt="Wellness & Preventive Care">
-              <div class="card-body">
-                <h5 class="card-title">Wellness & Preventive Care</h5>
-                <p class="card-text">
-                  Take a proactive approach to your health with our wellness and preventive care services.  
-                  We focus on stress management, lifestyle coaching, and early disease prevention to keep you feeling your best.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card service-card" data-id="6" onclick="redirectToDetails(6)">
-              <img src="assets/img/services/herbal.jpg" class="card-img-top" alt="Herbal & Organic Health Solutions">
-              <div class="card-body">
-                <h5 class="card-title">Herbal & Organic Health Solutions</h5>
-                <p class="card-text">
-                  Discover the power of nature with our range of herbal and organic health solutions.  
-                  From natural supplements to holistic therapies, we provide safe and effective ways to enhance vitality and wellness.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-      
-        </div>
+    <div class="service-details-container">
+        <img id="service-image" src="" alt="Service Image" class="service-image">
+        <h1 id="service-title" class="service-title"></h1>
+        <p id="service-description" class="service-description"></p>
       </div>
-      
-
-    </section><!-- /Services Section -->
 
   </main>
 
@@ -269,8 +170,51 @@
   <!-- Preloader -->
   <div id="preloader"></div>
   <script>
-    function redirectToDetails(id) {
-      window.location.href = `services-details.html?id=${id}`;
+     const services = {
+      1: {
+        title: "General Healthcare",
+        image: "assets/img/services/healthcare.jpg",
+        description: "Comprehensive healthcare services including routine check-ups, expert consultations, and disease management to ensure your well-being."
+      },
+      2: {
+        title: "Nutritional Counseling",
+        image: "assets/img/services/counselling.jpg",
+        description: "Our nutrition experts provide personalized diet plans and professional guidance to help you maintain a balanced and healthy lifestyle."
+      },
+      3: {
+        title: "Vitamins & Supplements",
+        image: "assets/img/services/suppliments.jpg",
+        description: "We offer premium-quality vitamins and supplements to enhance your immune system, energy levels, and overall health."
+      },
+      4: {
+        title: "Weight Management & Diet Plans",
+        image: "assets/img/services/diet.jpg",
+        description: "Achieve your health goals with our customized diet plans and effective weight management strategies tailored to your needs."
+      },
+      5: {
+        title: "Wellness & Preventive Care",
+        image: "assets/img/services/wellness.jpg",
+        description: "Stay ahead of health risks with our preventive care programs designed to keep you fit and healthy for a better quality of life."
+      },
+      6: {
+        title: "Herbal & Organic Health Solutions",
+        image: "assets/img/services/herbal.jpg",
+        description: "Experience the power of nature with our herbal and organic treatments that promote holistic health and well-being."
+      }
+    };
+
+    // Extract service ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceId = urlParams.get("id");
+
+    // Display service details dynamically
+    if (services[serviceId]) {
+      document.getElementById("service-title").textContent = services[serviceId].title;
+      document.getElementById("service-image").src = services[serviceId].image;
+      document.getElementById("service-description").textContent = services[serviceId].description;
+      document.getElementById("breadcrumb").textContent = services[serviceId].title;
+    } else {
+      document.querySelector("main").innerHTML = "<h2 class='text-center mt-5'>Service Not Found</h2>";
     }
   </script>
 
